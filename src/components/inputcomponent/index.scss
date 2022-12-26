@@ -1,0 +1,15 @@
+#inputComponent {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0px 180px;
+  // background-color: red;
+  #inputSearch {
+    input {
+      padding: 5px;
+    }
+  }
+}
+
+@media only screen and (min-width: 768px) {
+}
