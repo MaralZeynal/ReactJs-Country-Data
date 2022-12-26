@@ -1,21 +1,31 @@
 import React, { useEffect, useState } from "react";
 import Card from "react-bootstrap/Card";
 import ListGroup from "react-bootstrap/ListGroup";
+import { useNavigate, useParams } from "react-router";
 
 const DetailPage = () => {
   const [card, setCard] = useState([]);
-  const [users, setUser] = useState([]);
 
-  useEffect(() => {
-    fetch("https://restcountries.com/v3.1/name/${name}")
-      .then((response) => response.json())
-      .then((data) => setUser(data));
-  }, []);
+  // const { id } = useParams();
+  // const navigate = useNavigate();
+  // const getData = async () => {
+  //   setCard(await getCardById(id));
+  // };
+  // useEffect(() => {
+  //   getData();
+  // }, []);
+
+  // useEffect(() => {
+  //   fetch("https://restcountries.com/v3.1/name/${name}")
+  //     .then((response) => response.json())
+  //     .then((data) => setCard(data));
+  // }, []);
 
   return (
     <div>
-      {users.map((elem) => {
+      {card.map((elem) => {
         <Card style={{ width: "18rem" }}>
+          <button onClick={() => navigate(-1)}>Back</button>
           <Card.Img variant="top" src={elem.flags.png} />
           <Card.Body>
             <Card.Title>{elem.name}</Card.Title>
